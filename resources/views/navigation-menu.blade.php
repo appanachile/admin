@@ -242,7 +242,7 @@
 
                 @can('Ver produccion_total')
                     <x-jet-responsive-nav-link href="{{ route('documentacion') }}" :active="request()->routeIs('documentacion')">
-                        {{ __('Documentación') }}
+                        {{ __('Documentació') }}
                     </x-jet-responsive-nav-link>
                 @endcan
 
