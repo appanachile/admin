@@ -127,6 +127,9 @@
                         </x-slot>
 
                         <x-slot name="content">
+                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                {{ __('Mis Datos') }}
+                            </x-jet-dropdown-link>
                             @can('Ver roles')
                                 <x-jet-dropdown-link href="{{ route('admin.roles.index') }}">
                                     {{ __('Usuarios Activos') }}
@@ -162,9 +165,7 @@
                                 {{ __('Configuración') }}
                             </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Mis Datos') }}
-                            </x-jet-dropdown-link>
+                       
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -233,6 +234,9 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="mt-3 space-y-1">
+                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                    {{ __('Mis Datos') }}
+                </x-jet-responsive-nav-link>
                 <!-- Account Management -->
                 @can('Ver roles')
                     <x-jet-responsive-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.index')">
@@ -280,9 +284,7 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Mis Datos') }}
-                </x-jet-responsive-nav-link>
+               
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
