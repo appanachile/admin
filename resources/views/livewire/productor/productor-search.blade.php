@@ -18,7 +18,7 @@
                        <div class="flex items-center justify-center">
                           <div class="flex-shrink-0 text-center">
                              <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{number_format($allusers->count())}}</span>
-                             <h3 class="text-base font-normal text-gray-500">Productores</h3>
+                             <h3 class="text-base font-normal text-gray-500">Proveedores</h3>
                           </div>
                          
                        </div>
@@ -27,7 +27,7 @@
                     <h1 class="text-center text-sm my-4 mx-6"><b>Ultima Sincronizacion:</b> {{date('d M Y g:i a', strtotime($sync->fecha))}} <b>Tipo:</b> {{$sync->tipo}} <b>Cantidad:</b> {{$sync->cantidad}}</h1>
                 @endif
                 <div class="flex justify-center mb-2 items-center content-center"> 
-                    <a href="{{route('productor.refresh')}}">
+                    <a href="{{route('productor.refresh')}}" class="hidden">
                         <button  class="items-center focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 px-6 py-3 bg-gray-500 hover:bg-gray-500 focus:outline-none rounded">
                             <p class="text-sm font-medium leading-none text-white">FX IMPORT</p>
                         </button>
@@ -65,7 +65,6 @@
                                 <th>ID</th>
                                 <th>Empresa</th>
                                 <th>RUT Empresa</th>
-                                <th class="text-center">CSG</th>
                                 <th class="text-center">Usurio</th>
                                 <th class="text-center">Pass</th>
                                 <th>CELULAR</th>
@@ -144,19 +143,7 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td class="pl-5 text-center">
-                                                <a href="{{route('dashboard.productor',$user->id)}}">
-                                                <p class="text-base text-center font-medium leading-none text-gray-700 mr-2">
-
-                                            
-                                                @if ($user->csg)
-                                                        {{$user->csg}}
-                                                        
-                                                    @endif
-                                                
-                                                </p>
-                                                </a>
-                                            </td>
+                                       
                                             <td class="pl-5 whitespace-nowrap">
                                                 <a href="{{route('dashboard.productor',$user->id)}}">
                                                     <p class="whitespace-nowrap  text-base flex font-medium leading-none text-gray-700 mr-2">
