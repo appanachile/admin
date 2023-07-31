@@ -140,6 +140,10 @@
                                 {{ __('Mi Facturación') }}
                             </x-jet-dropdown-link>
 
+                            <x-jet-dropdown-link href="">
+                                {{ __('Soporte al Cliente') }}
+                            </x-jet-dropdown-link>
+
                             @can('Ver produccion_total')
                                 <x-jet-dropdown-link href="{{ route('documentacion') }}">
                                     {{ __('Documentación') }}
@@ -250,6 +254,10 @@
 
                 <x-jet-responsive-nav-link href="">
                     {{ __('Mi Facturación') }}
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="">
+                    {{ __('Soporte al Cliente') }}
                 </x-jet-responsive-nav-link>
 
                 @can('Ver produccion_total')
