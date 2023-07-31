@@ -18,6 +18,9 @@
     </div>
       @endif
 
+      @livewire('productor.productor-search')
+
+              
   
       <div class="flex justify-end">
          <a href="{{route('admin.roles.create')}}">

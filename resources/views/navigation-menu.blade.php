@@ -129,7 +129,7 @@
                         <x-slot name="content">
                             @can('Ver roles')
                                 <x-jet-dropdown-link href="{{ route('admin.roles.index') }}">
-                                    {{ __('Roles') }}
+                                    {{ __('Usuarios Activos') }}
                                 </x-jet-dropdown-link>
                             @endcan
 
@@ -163,7 +163,7 @@
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Perfil') }}
+                                {{ __('Mis Datos') }}
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -236,7 +236,7 @@
                 <!-- Account Management -->
                 @can('Ver roles')
                     <x-jet-responsive-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.index')">
-                        {{ __('Roles') }}
+                        {{ __('Usuarios Activos') }}
                     </x-jet-responsive-nav-link>
                 @endcan
 
@@ -281,7 +281,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Perfil') }}
+                    {{ __('Mis Datos') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
