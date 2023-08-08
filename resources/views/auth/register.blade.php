@@ -23,10 +23,12 @@
                 <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
             </div>
             <div class="w-full py-6 z-20">
-                <div class="flex space-x-2 justify-center items-center">
-                    <img src="https://tailus.io/sources/blocks/food-delivery/preview/images/icon.png" class="w-12" alt="tailus logo" width="144" height="133">
-                    <span class="text-2xl font-bold text-yellow-900">Appaña <span class="text-yellow-700">app</span></span>
-                </div>
+                <a href="https://appana.cl">
+                    <div class="flex space-x-2 justify-center items-center">
+                        <img src="https://tailus.io/sources/blocks/food-delivery/preview/images/icon.png" class="w-12" alt="tailus logo" width="144" height="133">
+                        <span class="text-2xl font-bold text-yellow-900">Appaña <span class="text-yellow-700">app</span></span>
+                    </div>
+                </a>
                 <div class="flex justify-center mt-6 mb-4">
                 <button class="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative">
                     <span class="mr-4">
