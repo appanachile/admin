@@ -1,10 +1,10 @@
 <x-app-layout>
-    <section class="min-h-screen flex items-stretch text-white ">
+    <section class="min-h-screen flex items-stretch">
         <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);">
             <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
             <div class="w-full px-24 z-10">
-                <h1 class="text-5xl font-bold text-left tracking-wide">Postula a Nuestro Equipo de Colaboradores</h1>
-                <p class="text-3xl my-4">Construyendo Juntos un Mejor Servicio.</p>
+                <h1 class="text-5xl font-bold text-left tracking-wide text-white">Postula a Nuestro Equipo de Colaboradores</h1>
+                <p class="text-3xl my-4 text-white">Construyendo Juntos un Mejor Servicio.</p>
             </div>
             <div class="bottom-0 absolute p-4 text-center right-0 left-0 flex justify-center space-x-4">
                 <span>
@@ -30,7 +30,7 @@
                     </div>
                 </a>
                 <div class="flex justify-center mt-6 mb-4">
-                <button class="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative">
+                <button class="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative bg-white">
                     <span class="mr-4">
                       <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <path fill="#EA4335 " d="M5.26620003,9.76452941 C6.19878754,6.93863203 8.85444915,4.90909091 12,4.90909091 C13.6909091,4.90909091 15.2181818,5.50909091 16.4181818,6.49090909 L19.9090909,3 C17.7818182,1.14545455 15.0545455,0 12,0 C7.27006974,0 3.1977497,2.69829785 1.23999023,6.65002441 L5.26620003,9.76452941 Z"/>
@@ -39,7 +39,7 @@
                         <path fill="#FBBC05" d="M5.27698177,14.2678769 C5.03832634,13.556323 4.90909091,12.7937589 4.90909091,12 C4.90909091,11.2182781 5.03443647,10.4668121 5.26620003,9.76452941 L1.23999023,6.65002441 C0.43658717,8.26043162 0,10.0753848 0,12 C0,13.9195484 0.444780743,15.7301709 1.23746264,17.3349879 L5.27698177,14.2678769 Z"/>
                     </svg>
                     </span>
-                    <span class="">Ingresar con Google</span>
+                    <span class="text-black">Ingresar con Google</span>
                   </button>
                 </div>
                 <div class="py-6 space-x-2 hidden">
