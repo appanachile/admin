@@ -65,12 +65,12 @@
                         <x-jet-input id="email" class="block mt-1 w-full text-gray-900" type="email" name="email" :value="old('email')" required />
                     </div>
         
-                    <div class="mt-4">
+                    <div class="mt-4 hidden">
                         <x-jet-label for="password" value="{{ __('Contraseña') }}" class="text-white text-left" />
                         <x-jet-input id="password" class="block mt-1 w-full text-gray-900" type="password" name="password" required autocomplete="new-password" />
                     </div>
         
-                    <div class="mt-4">
+                    <div class="mt-4 hidden">
                         <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" class="text-white text-left" />
                         <x-jet-input id="password_confirmation" class="block mt-1 w-full text-gray-900" type="password" name="password_confirmation" required autocomplete="new-password" />
                     </div>
