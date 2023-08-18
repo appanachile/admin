@@ -34,7 +34,7 @@ Route::middleware([
     'verified'
 ])->group(function () {
     
-    Route::get('/login-google', [GoogleController::class,'login']);
+Route::get('/login-google', [GoogleController::class,'login']);
  
 Route::get('/google-callback', [GoogleController::class,'callback']);
 
