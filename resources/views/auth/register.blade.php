@@ -30,6 +30,7 @@
                     </div>
                 </a>
                 <div class="flex justify-center mt-6 mb-4">
+                    <a href="https://admin.appana.cl/login-google">
                 <button class="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative bg-white">
                     <span class="mr-4">
                       <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -41,6 +42,7 @@
                     </span>
                     <span class="text-black">Ingresar con Google</span>
                   </button>
+                </a>
                 </div>
                 <div class="py-6 space-x-2 hidden">
                     <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white hidden">f</span>
