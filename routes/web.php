@@ -28,15 +28,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');});
 
+Route::get('/login-google', [GoogleController::class,'login']);
+ 
+Route::get('/google-callback', [GoogleController::class,'callback']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
     
-Route::get('/login-google', [GoogleController::class,'login']);
- 
-Route::get('/google-callback', [GoogleController::class,'callback']);
+
 
 
 Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
