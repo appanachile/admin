@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\ProcesoController;
@@ -33,6 +34,10 @@ Route::middleware([
     'verified'
 ])->group(function () {
     
+    Route::get('/login-google', [GoogleController::class,'login']);
+ 
+Route::get('/google-callback', [GoogleController::class,'callback']);
+
 
 Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 });
