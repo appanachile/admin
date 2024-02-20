@@ -30,6 +30,7 @@ class User extends Authenticatable
         'email',
         'rut',
         'lastname',
+        'fono',
         'idprod',
         'csg',
         'user',
