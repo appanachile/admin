@@ -37,7 +37,9 @@
                   {!! Form::text('rut', null , ['class'=>'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' , 'placeholder'=>'']) !!}
                   {!! Form::label('email','Email:',['class'=>'block text-xs font-semibold text-gray-600 uppercase mt-2']) !!}
                   {!! Form::text('email', null , ['class'=>'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' , 'placeholder'=>'']) !!}
-                 
+                  {!! Form::label('fono','Fono:',['class'=>'block text-xs font-semibold text-gray-600 uppercase mt-2']) !!}
+                  {!! Form::text('fono', null , ['class'=>'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' , 'placeholder'=>'']) !!}
+                               
                   <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                    Actualizar
                   </button>
