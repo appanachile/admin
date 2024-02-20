@@ -1,6 +1,6 @@
 <x-app-layout>
 
-           <section class="bg-cover bg-center" style="background-image: url({{asset('image/bg_intranet_admin2.jpg'); }})">
+         <section class="bg-cover bg-center" style="background-image: url({{asset('image/bg_intranet_admin2.jpg'); }})">
 
             <div class="mx-auto pt-64">
                 
@@ -16,7 +16,35 @@
 
         </section>
 
-   
+       @if (IS_NULL(auth()->user()->rut) || IS_NULL(auth()->user()->lastname))
+            <div class="grid mt-4 place-items-center">
+               <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
+               <h1 class="text-xl font-semibold">Hello there ?, <span class="font-normal">please fill in your information to continue</span></h1>
+               {!! Form::model(auth()->user(), ['route'=>['productor.users.update',auth()->user()],'method' => 'put', 'autocomplete'=>'off']) !!}    
+
+                  <div class="flex justify-between gap-3 mt-2">
+                     <span class="w-1/2">
+                        {!! Form::label('name','Nombre:',['class'=>'block text-xs font-semibold text-gray-600 uppercase']) !!}
+                        {!! Form::text('name', null , ['class'=>'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' , 'placeholder'=>'']) !!}
+                       
+                     </span>
+                     <span class="w-1/2">
+                        {!! Form::label('lastname','Apellido:',['class'=>'block text-xs font-semibold text-gray-600 uppercase']) !!}
+                        {!! Form::text('lastname', null , ['class'=>'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' , 'placeholder'=>'']) !!}
+                     </span>
+                  </div>
+                  {!! Form::label('rut','Rut:',['class'=>'block text-xs font-semibold text-gray-600 uppercase mt-2']) !!}
+                  {!! Form::text('rut', null , ['class'=>'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' , 'placeholder'=>'']) !!}
+                  {!! Form::label('email','Email:',['class'=>'block text-xs font-semibold text-gray-600 uppercase mt-2']) !!}
+                  {!! Form::text('email', null , ['class'=>'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' , 'placeholder'=>'']) !!}
+                 
+                  <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                   Actualizar
+                  </button>
+               {!! Form::close() !!}
+               </div>
+            </div>
+       @endif
    
    
 @isset($user)
