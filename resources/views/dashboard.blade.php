@@ -16,7 +16,7 @@
 
         </section>
 
-       @if (IS_NULL(auth()->user()->rut) || IS_NULL(auth()->user()->lastname))
+       @if (IS_NULL(auth()->user()->rut) || IS_NULL(auth()->user()->lastname) || IS_NULL(auth()->user()->fono))
             <div class="grid mt-4 place-items-center" x-data="{open: true}">
                <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12" x-show="open">
                <h1 class="text-xl font-semibold">Hello there ?, <span class="font-normal">please fill in your information to continue</span></h1>
