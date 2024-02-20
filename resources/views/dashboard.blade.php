@@ -17,8 +17,8 @@
         </section>
 
        @if (IS_NULL(auth()->user()->rut) || IS_NULL(auth()->user()->lastname))
-            <div class="grid mt-4 place-items-center">
-               <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
+            <div class="grid mt-4 place-items-center" x-data="{open: true}">
+               <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12" x-show="open">
                <h1 class="text-xl font-semibold">Hello there ?, <span class="font-normal">please fill in your information to continue</span></h1>
                {!! Form::model(auth()->user(), ['route'=>['productor.users.update',auth()->user()],'method' => 'put', 'autocomplete'=>'off']) !!}    
 
@@ -41,8 +41,9 @@
                   <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                    Actualizar
                   </button>
-                  <p class="flex justify-end inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">Saltar</p>
+                
                {!! Form::close() !!}
+               <p x-on:click="open=false" class="flex justify-end inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">Saltar</p>
                </div>
             </div>
        @endif
