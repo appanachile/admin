@@ -64,7 +64,7 @@
 			</div>
 			
 			<div class="w-1/4">
-				Personal details
+				Mi negocio
 			</div>
 			
 			<div class="w-1/4">
