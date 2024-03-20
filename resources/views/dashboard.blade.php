@@ -61,6 +61,9 @@
    </div>
 
 @else
+
+   @livewire('cliente.empresa-create')
+  
    @can('Ver produccion_total') 
       @livewire('admin.graficos-admin')
    @endcan
