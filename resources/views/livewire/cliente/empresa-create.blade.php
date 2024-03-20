@@ -50,7 +50,7 @@
 					
 		</div>
 		
-		<div class="flex justify-between text-xs content-center text-center mb-12 mx-32">
+		<div class="flex justify-between text-xs content-center text-center mb-12 mx-20">
 			<div class="w-1/4">
 				Mis datos
 			</div>
