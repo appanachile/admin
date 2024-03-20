@@ -306,7 +306,7 @@
 
                                             @if ($user->fono)
                                                 <div class="flex text-center justify-center items-center content-center">
-                                                <a href="https://api.whatsapp.com/send?phone={{$user->fono}}&text=hola">
+                                                <a href="https://api.whatsapp.com/send?phone={{$user->fono}}&text=hola" target="_blank">
                                                     <b>{{$user->fono}}  </b>
                                                 </a>
                                                 </div>
