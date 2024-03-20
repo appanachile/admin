@@ -39,6 +39,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'fono' => $input['fono'],
                 'lastname' => $input['lastname'],
             ])->save();
+            return redirect()->route('dashboard');
         }
     }
 
