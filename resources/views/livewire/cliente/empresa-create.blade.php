@@ -78,7 +78,7 @@
 
 		<div class="hidden icon bg-blue-600 text-white w-6 h-6 absolute flex items-center justify-center p-5" style="left:-40px"><i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i></div>
 
-		<h3 class="text-2xl text-gray-900 font-semibold">Let us call you!</h3>
+		<h3 class="text-2xl text-gray-900 font-semibold">Mi negocio!</h3>
 		<p class="text-gray-600"> To help you choose your property</p>
 		<div class="flex space-x-5 mt-3">
 			<input type="text" name="" id="" placeholder="Your Name" class="border p-2  w-1/2">
