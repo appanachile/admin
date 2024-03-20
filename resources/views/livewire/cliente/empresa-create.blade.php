@@ -23,7 +23,7 @@
 			
 			<div class="flex-1">
 				<div class="w-10 h-10 bg-white mx-auto rounded-full text-lg text-white flex items-center ">
-					<span class="text-gray-900 text-center w-full">3</span>
+					<span class="text-gray-900 text-center w-full">2</span>
 				</div>
 			</div>
 		
