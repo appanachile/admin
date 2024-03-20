@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MensajeController;
@@ -75,6 +76,8 @@ Route::post('pass/{user}', [UserController::class,'password_rec'])->middleware('
 Route::resource('telefono', TelefonoController::class)->names('telefonos');
 
 Route::resource('role', RoleController::class)->names('admin.roles');
+
+Route::resource('empresa', EmpresaController::class)->names('empresas');
 
 Route::resource('users', UserController::class)->only(['index','edit','update','destroy'])->names('users');
 
