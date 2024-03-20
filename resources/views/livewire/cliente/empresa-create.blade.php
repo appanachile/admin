@@ -15,21 +15,21 @@
 	
 	
 			<div class="w-1/6 align-center items-center align-middle content-center flex">
-				<div class="w-full bg-grey-light rounded items-center align-middle align-center flex-1">
+				<div class="w-full bg-gray-300 rounded items-center align-middle align-center flex-1">
 					 <div class="bg-green-500 text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 100%"></div>
 				</div>
 			</div>
 		
 			
 			<div class="flex-1">
-				<div class="w-10 h-10 bg-green-600 mx-auto rounded-full text-lg text-white flex items-center ">
-					<span class="text-white text-center w-full"><i class="fa fa-check w-full fill-current white"></i></span>
+				<div class="w-10 h-10 bg-white mx-auto rounded-full text-lg text-white flex items-center ">
+					<span class="text-gray-900 text-center w-full">3</span>
 				</div>
 			</div>
 		
 			<div class="w-1/6 align-center items-center align-middle content-center flex">
-				<div class="w-full bg-grey-light rounded items-center align-middle align-center flex-1">
-					 <div class="bg-green-500 text-xs leading-none py-1 text-center text-grey-darkest rounded transition-all duration-500" style="width: {{$dato}}%"></div>
+				<div class="w-full bg-gray-300 rounded items-center align-middle align-center flex-1">
+					 <div class="bg-green-500 text-xs leading-none py-1 text-center text-grey-darkest rounded transition-all duration-500" style="width: 0%"></div>
 				</div>
 			</div>
 		
@@ -41,7 +41,7 @@
 		
 		
 			<div class="w-1/6 align-center items-center align-middle content-center flex">
-				<div class="w-full bg-grey-light rounded items-center align-middle align-center flex-1">
+				<div class="w-full bg-gray-300 rounded items-center align-middle align-center flex-1">
 					 <div class="bg-green-500 text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 		
 		<div class="flex text-xs content-center text-center mb-12">
 			<div class="w-1/4">
-				Invitation received
+				Mis datos
 			</div>
 			
 			<div class="w-1/4">
