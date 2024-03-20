@@ -47,18 +47,10 @@
 			</div>
 	
 	
-			<div class="flex-1">
-				<div class="w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center">
-					<span class="text-gray-900 text-center w-full">4</span>
-				</div>
-			</div>
-		
-		
-			<div class="flex-1">
-			</div>		
+					
 		</div>
 		
-		<div class="flex text-xs content-center text-center mb-12">
+		<div class="flex justify-between text-xs content-center text-center mb-12 mx-32">
 			<div class="w-1/4">
 				Mis datos
 			</div>
@@ -68,12 +60,10 @@
 			</div>
 			
 			<div class="w-1/4">
-				Application details
+				Servicios
 			</div>
 			
-			<div class="w-1/4">
-				Confirmation
-			</div>			
+			
 		</div>
 
 		<div class="hidden icon bg-blue-600 text-white w-6 h-6 absolute flex items-center justify-center p-5" style="left:-40px"><i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i></div>

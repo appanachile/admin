@@ -22,11 +22,15 @@ return new class extends Migration
 
             $table->string('name');
 
-            $table->string('nick');  
+            $table->string('nick')->nullable();  
             
-            $table->string('rut');
+            $table->string('rut')->nullable();
 
-            $table->string('giro');
+            $table->string('giro')->nullable();
+
+            $table->string('direccion1')->nullable();
+
+            $table->string('direccion2')->nullable();
             
             $table->timestamps();
         });
