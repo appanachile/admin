@@ -72,7 +72,7 @@
 
 		
 		<div class="items-center mt-2">
-			  {!! Form::text('name',null, ['class'=>'ml-2 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md','placeholder'=>'Nombre', 'autofocus'=>'on']) !!}
+			  {!! Form::text('name',null, ['class'=>'ml-2 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md','placeholder'=>'Nombre o razón social', 'autofocus'=>'on']) !!}
 
 			  @error('name')
 				 <span class="text-danger ml-2">{{$message}}</span>
@@ -111,7 +111,7 @@
 	
 		</div>	  
 
-		<div class="grid grid-cols-2 mt-2">
+		<div class="grid grid-cols-2 gap-x-2 mt-2">
 			<div class="items-center">
 				{!! Form::text('direccion1',null, ['class'=>'ml-2 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md','placeholder'=>'Direccion 1', 'autofocus'=>'on']) !!}
 		
