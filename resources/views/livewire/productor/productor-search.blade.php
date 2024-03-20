@@ -304,6 +304,14 @@
                                     
                                         <td class="pl-5 text-center items-center content-center">
 
+                                            @if ($user->fono)
+                                                <div class="flex text-center justify-center items-center content-center">
+                                                <a href="https://api.whatsapp.com/send?phone={{$user->fono}}&text=hola">
+                                                    <b>{{$user->fono}}  </b>
+                                                </a>
+                                                </div>
+                                            @endif
+
                                             @if ($user->telefonos)
                                                 @foreach ($user->telefonos as $telefono)
                                                 <div class="flex text-center justify-center items-center content-center">
