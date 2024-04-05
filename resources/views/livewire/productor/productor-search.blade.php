@@ -68,6 +68,7 @@
                                 <th class="text-center">Usurio</th>
                                 <th class="text-center">Pass</th>
                                 <th>CELULAR</th>
+                                <th>DASHBOARD</th>
                                 <th>EMAIL</th>
                                 <th>ACTUALIZAR</th>
                                 <th>ULTIMA <br>MODIFICACIÓN</th>
@@ -211,12 +212,23 @@
                                             @endif
                                                                                         
                                         </td>
+
+                                        @php
+                                            $dashboard=[''=>'','uno'=>'uno','dos'=>'dos']
+                                        @endphp
+
+                                        {!! Form::model($user, ['route'=>['productor.users.update',$user],'method' => 'put', 'autocomplete'=>'off']) !!}                
+                                            
+                                        <td class="w-24">
+                                            
+                                            {!! Form::select('dashboard', $dashboard, null , ['class'=>'form-input block w-24 mt-1']) !!}
+                                            
+                                        </td>
                                         <td class="w-full">
                                         
                                             
                                            
                                                 
-                                                {!! Form::model($user, ['route'=>['productor.users.update',$user],'method' => 'put', 'autocomplete'=>'off']) !!}                
                                                 {!! Form::email('email', null , ['class' => 'mt-1 block w-full']) !!}
                                                     
                                                    

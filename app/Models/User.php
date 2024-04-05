@@ -34,6 +34,7 @@ class User extends Authenticatable
         'idprod',
         'csg',
         'user',
+        'dashboard',
         'password',
     ];
 

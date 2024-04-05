@@ -1,6 +1,12 @@
 <x-app-layout>
 
-         <section class="bg-cover bg-center" style="background-image: url({{asset('image/bg_intranet_admin2.jpg'); }})">
+   @if (auth()->user()->dashboard=='uno')
+      @livewire('productor.dashboard',['type'=>'uno'])
+   @elseif(auth()->user()->dashboard=='dos')
+      @livewire('productor.dashboard',['type'=>'dos'])
+   @else
+       
+      <section class="bg-cover bg-center" style="background-image: url({{asset('image/bg_intranet_admin2.jpg'); }})">
 
             <div class="mx-auto pt-64">
                 
@@ -14,7 +20,8 @@
                 
             </div>
 
-        </section>
+      </section>
+
 
        @if (IS_NULL(auth()->user()->rut) || IS_NULL(auth()->user()->lastname) || IS_NULL(auth()->user()->fono))
             <div class="grid mt-4 place-items-center" x-data="{open: true}">
@@ -52,36 +59,37 @@
        @endif
 
    
-@isset($user)
+      @isset($user)
 
-   @livewire('admin.graficos-productor', ['user' => $user], ($user->id))
+         @livewire('admin.graficos-productor', ['user' => $user], ($user->id))
 
-   <div class="mx-2 sm:mx-12">
-      @livewire('productor.production-show', ['user' => $user], ($user->id))
-   </div>
+         <div class="mx-2 sm:mx-12">
+            @livewire('productor.production-show', ['user' => $user], ($user->id))
+         </div>
 
-@else
+      @else
 
-   @livewire('cliente.empresa-create')
+         @livewire('cliente.empresa-create')
+         
+      
+         @can('Ver produccion_total') 
+            @livewire('admin.graficos-admin')
+         @endcan
+
+         @can('Ver produccion_propia')
+            @livewire('admin.graficos-productor', ['user' => auth()->user()], key(auth()->user()->id))
+         @endcan
+
+         @can('Ver produccion_propia')
+            <div class="mx-2 sm:mx-12">
+               @livewire('productor.production-show', ['user' => auth()->user()], key(auth()->user()->id))
+            </div>
+         @endcan
+
+      @endisset
+
   
-   @can('Ver produccion_total') 
-      @livewire('admin.graficos-admin')
-   @endcan
-
-   @can('Ver produccion_propia')
-      @livewire('admin.graficos-productor', ['user' => auth()->user()], key(auth()->user()->id))
-   @endcan
-
-   @can('Ver produccion_propia')
-      <div class="mx-2 sm:mx-12">
-         @livewire('productor.production-show', ['user' => auth()->user()], key(auth()->user()->id))
-      </div>
-   @endcan
-
-@endisset
-
-  
-   
+   @endif
 
     <div class="pb-12 pt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -581,4 +589,5 @@
             </div>
         </div>
     </div>
+
 </x-app-layout>
