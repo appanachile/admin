@@ -25,7 +25,7 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @if(Route::currentRouteName() == 'dashboard' && auth()->user()->dashboard)
+            @if((Route::currentRouteName() == 'dashboard' || Route::currentRouteName() == 'categorias.index') && auth()->user()->dashboard)
             
             @else
                 @livewire('navigation-menu')
