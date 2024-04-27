@@ -30,11 +30,11 @@ class CategoriaCreate extends Component
         $this->wstatus=$cat->status;
     }
 
-    public function save($id){
+    public function save(){
         $cat=Categoria::find($this->idcat);
         $cat->update(['name'=>$this->wname,
                         'status'=>$this->wstatus]);
-        $this->reset(['idcat','wname','wcat']);
+        $this->reset(['idcat','wname','wstatus']);
     }
 
 

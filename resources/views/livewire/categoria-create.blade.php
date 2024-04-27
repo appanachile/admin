@@ -43,7 +43,7 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 @if ($idcat==$categoria->id)
-                                    <input wire:model.live="wname" wire:keydown.enter="create" type="text" class="form-input mr-2 border-2 border-gray-300 bg-white h-10 rounded-lg text-sm focus:outline-none">
+                                    <input wire:model.live="wname" wire:keydown.enter="save" type="text" class="form-input mr-2 border-2 border-gray-300 bg-white h-10 rounded-lg text-sm focus:outline-none">
        
                                 @else
                                     {{$categoria->name}}
@@ -53,8 +53,10 @@
                         
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 @if ($idcat==$categoria->id)
-                                    <input wire:model.live="wstatus" wire:keydown.enter="create" type="text" class="form-input mr-2 border-2 border-gray-300 bg-white h-10 rounded-lg text-sm focus:outline-none">
-    
+                                    <select wire:model="wstatus" class="block appearance-none mr-2 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                        <option value="active">Activo</option>
+                                        <option value="inactive">Inactivo</option>
+                                    </select>
                                 @else
                                     {{$categoria->status}}
                                 @endif
