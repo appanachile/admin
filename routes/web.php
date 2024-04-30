@@ -3,6 +3,7 @@
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\FamiliaController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MensajeController;
@@ -142,3 +143,5 @@ Route::get('user/create', [HomeController::class,'user_create'])->name('user.cre
 Route::post('user/admin/store', [HomeController::class,'user_store'])->name('user.store');
 
 Route::resource('categoria', CategoriaController::class)->middleware('auth')->names('categorias');
+
+Route::resource('familia', FamiliaController::class)->middleware('auth')->names('familias');

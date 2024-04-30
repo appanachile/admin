@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categorias', function (Blueprint $table) {
+        Schema::create('familias', function (Blueprint $table) {
             $table->id();
 
             $table->string('name');  
-            $table->string('status')->nullable();
-            $table->foreignId('familia_id')
-            ->constrained()
-            ->onDelete('cascade');
+            $table->string('status')->nullable();  
 
             $table->timestamps();
         });
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorias');
+        Schema::dropIfExists('familias');
     }
 };
