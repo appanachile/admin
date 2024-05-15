@@ -8,6 +8,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\ProcesoController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\Productor\UserController as ProductorUserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TelefonoController;
@@ -145,3 +146,5 @@ Route::post('user/admin/store', [HomeController::class,'user_store'])->name('use
 Route::resource('categoria', CategoriaController::class)->middleware('auth')->names('categorias');
 
 Route::resource('familia', FamiliaController::class)->middleware('auth')->names('familias');
+
+Route::resource('productos', ProductoController::class)->middleware('auth')->names('productos');
