@@ -68,7 +68,7 @@
         </nav>
         <div class="mt-12">
            
-            
+            @livewire('producto-inteligente',['producto'=>null])
             
         </div>
         

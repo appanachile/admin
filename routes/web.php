@@ -148,3 +148,7 @@ Route::resource('categoria', CategoriaController::class)->middleware('auth')->na
 Route::resource('familia', FamiliaController::class)->middleware('auth')->names('familias');
 
 Route::resource('productos', ProductoController::class)->middleware('auth')->names('productos');
+
+Route::post('{producto}/skugenerate',[ProductoController::class, 'skugenerate'])->name('producto.skugenerate');
+
+Route::post('{producto}/uploadfotos', [ProductoController::class,'upload'])->name('productos.upload');

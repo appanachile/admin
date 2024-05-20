@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -22,8 +24,8 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   $category_products=Categoria::where('id','>',0)->pluck('name','id');
+        return view('productos.create',compact('category_products'));
     }
 
     /**
@@ -34,7 +36,19 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'precio'=>'required'
+        ]); 
+        
+
+        $producto = Producto::create([  'name'=>$request->name,
+                                        'precio'=>$request->precio,
+                                        'sku'=>$request->sku,
+                                        'costo'=>$request->costo,
+                                        'personalizable'=>$request->personalizable]);
+
+        return redirect()->route('productos.index');
     }
 
     /**
@@ -54,9 +68,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Producto $producto)
+    {   $category_products=Categoria::where('id','>',0)->pluck('name','id');
+        return view('productos.edit',compact('producto','category_products'));
     }
 
     /**
