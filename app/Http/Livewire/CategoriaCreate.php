@@ -28,7 +28,7 @@ class CategoriaCreate extends Component
         ]);
         Categoria::create(['name'=>$this->name,
                             'status'=>$this->status,
-                            'familia_id'=>$this->familiaid->id]);
+                            'familia_id'=>$this->selectedfam]);
         $this->status='active';
         $this->reset(['name']);
     }
