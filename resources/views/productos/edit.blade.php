@@ -94,13 +94,15 @@
                                 
                             
                             <div>
-                                {!! Form::open(['route'=>['producto.printsku',$producto] ,'files'=>true , 'autocomplete'=>'off', 'method'=>'POST' ,'target' => '_blank']) !!}
+                                {{-- comment
+                                    {!! Form::open(['route'=>['producto.printsku',$producto] ,'files'=>true , 'autocomplete'=>'off', 'method'=>'POST' ,'target' => '_blank']) !!}
 
-                                {!! Form::hidden('cantidad', 36 ) !!}
-                                
-                                {!! Form::submit('Imprimir Etiquetas', ['class'=>'link-button text-center mt-6 text-xs mx-2 text-blue-600 cursor-pointer']) !!}
+                                    {!! Form::hidden('cantidad', 36 ) !!}
                                     
-                                {!! Form::close() !!}
+                                    {!! Form::submit('Imprimir Etiquetas', ['class'=>'link-button text-center mt-6 text-xs mx-2 text-blue-600 cursor-pointer']) !!}
+                                        
+                                    {!! Form::close() !!}
+                                 --}}
                             </div>
                             @endif  
                         </div>
