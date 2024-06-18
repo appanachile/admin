@@ -134,11 +134,16 @@
                             @enderror
 
                         </div>
-                            <div class="my-4 flex items-center">
-                            {!! Form::label('category_product_id', 'Categoria:') !!}
-                            {!! Form::select('category_product_id', $category_products, null , ['class'=>'w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md ml-2']) !!}
-                            
-                            </div>
+                        <div class="my-4 flex items-center">
+                            {!! Form::label('familia_id', 'Familia:') !!}
+                            {!! Form::select('familia_id', $familias, null, ['class'=>'w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md ml-2', 'id' => 'familia-select']) !!}
+                        </div>
+                        
+                        <div class="my-4 flex items-center">
+                            {!! Form::label('categoria_id', 'Categoria:') !!}
+                            {!! Form::select('categoria_id',$category_products2, null, ['class'=>'w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md ml-2', 'id' => 'category-product-select']) !!}
+                        </div>
+                        
                             
                             <div class="mb-4">
                             {!! Form::label('descripcion', 'Descripción') !!}
@@ -367,5 +372,33 @@
         </div>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const familiaSelect = document.getElementById('familia-select');
+            const categoryProductSelect = document.getElementById('category-product-select');
+            const categoryProducts = @json($category_products);
+    
+            familiaSelect.addEventListener('change', function () {
+                const selectedFamiliaId = this.value;
+    
+                // Filtrar category_products basados en la familia seleccionada
+                const filteredCategoryProducts = categoryProducts.filter(product => product.familia_id == selectedFamiliaId);
+    
+                // Limpiar el select de category_products
+                categoryProductSelect.innerHTML = '';
+    
+                // Agregar las opciones filtradas al select de category_products
+                filteredCategoryProducts.forEach(product => {
+                    const option = document.createElement('option');
+                    option.value = product.id;
+                    option.text = product.name;
+                    categoryProductSelect.appendChild(option);
+                });
+            });
+        });
+    </script>
+
+
 </x-app-layout>
 

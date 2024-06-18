@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Familia;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,12 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   $category_products=Categoria::where('id','>',0)->pluck('name','id');
-        return view('productos.create',compact('category_products'));
+    {   $familias =Familia::where('id','>',0)->pluck('name','id');
+        
+        $fams=Familia::all();
+        $category_products2 =Categoria::where('familia_id',$fams->first()->id)->pluck('name','id');
+        $category_products=Categoria::all();
+        return view('productos.create',compact('category_products2','category_products','familias'));
     }
 
     /**
@@ -46,6 +51,7 @@ class ProductoController extends Controller
                                         'precio'=>$request->precio,
                                         'sku'=>$request->sku,
                                         'costo'=>$request->costo,
+                                        'categoria_id'=>$request->categoria_id,
                                         'personalizable'=>$request->personalizable]);
 
         return redirect()->route('productos.index');
@@ -69,8 +75,9 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Producto $producto)
-    {   $category_products=Categoria::where('id','>',0)->pluck('name','id');
-        return view('productos.edit',compact('producto','category_products'));
+    {   $familias = Familia::all();
+        $category_products = Categoria::all();
+        return view('productos.edit',compact('producto','category_products','familias'));
     }
 
     /**
@@ -80,9 +87,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Producto $producto)
     {
-        //
+        $producto->update($request->all());
+
+        return redirect()->back()->with('info','Producto actualizado con éxito.');
     }
 
     /**
@@ -91,8 +100,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($producto)
+    {   $producto = Producto::find($producto);
+       
+            $producto->delete();
+            return redirect()->route('productos.index')->with('info','El productó se elimino con éxito.');
+       
     }
 }

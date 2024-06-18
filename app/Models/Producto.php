@@ -18,5 +18,13 @@ class Producto extends Model
     public function stocks(){
         return $this->MorphMany('App\Models\Stock','stockable');
     }
+
+    public function categoria(){
+        return $this->BelongsTo('App\Models\Categoria');
+    }
+
+    public function familia(){
+        return $this->BelongsTo('App\Models\Familia');
+    }
     
 }

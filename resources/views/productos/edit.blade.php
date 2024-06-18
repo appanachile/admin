@@ -1,4 +1,8 @@
 <x-app-layout>
+    @section('css')
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" integrity="sha512-3g+prZHHfmnvE1HBLwUnVuunaPOob7dpksI7/v6UnF/rnKGwHf/GdEq9K7iEN7qTtW+S0iivTcGpeTBqqB04wA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @endsection
     <div class="min-h-screen bg-gray-50/50" x-data="{ aside: false }">
 
         @livewire('menu-aside')
@@ -160,7 +164,7 @@
                             @livewire('tienda.producto-stock',['producto_id'=>$producto->id])
                             --}}
 
-                        {!! Form::model($producto, ['route'=>['productos.update',$producto],'method' => 'POST', 'files'=> true , 'autocomplete'=>'off']) !!}
+                        {!! Form::model($producto, ['route'=>['productos.update',$producto],'method' => 'PUT', 'files'=> true , 'autocomplete'=>'off']) !!}
                         
                         
                         <div class="flex items-center">
@@ -173,10 +177,15 @@
                                 @enderror
         
                         </div>
+
                         <div class="my-4 flex items-center">
-                                {!! Form::label('category_product_id', 'Categoria:') !!}
-                                {!! Form::select('category_product_id', $category_products, null , ['class'=>'w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md ml-2']) !!}
-                            
+                            {!! Form::label('familia_id', 'Familia:') !!}
+                            {!! Form::select('familia_id', $familias->pluck('name', 'id'), $producto->categoryProduct->familia_id ?? null, ['class'=>'w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md ml-2', 'id' => 'familia-select']) !!}
+                        </div>
+                        
+                        <div class="my-4 flex items-center">
+                            {!! Form::label('categoria_id', 'Categoria:') !!}
+                            {!! Form::select('categoria_id', $category_products->pluck('name', 'id'), null, ['class'=>'w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md ml-2', 'id' => 'category-product-select']) !!}
                         </div>
                             
                             <div class="mb-4">
@@ -342,14 +351,76 @@
                                     --}}
                                 </tbody>
                             </table>
-                            
+
+                         
                         </div>
+                        <form id="deleteForm" action="{{route('productos.destroy', $producto)}}" method="POST">
+                            @method('delete')
+                            @csrf
+                            <button id="deleteButton" class="font-bold py-2 px-4 rounded bg-red-500 text-white hover:bg-red-700 w-full items-center justify-items-center mt-2 mb-20" type='button'>Eliminar</button>
+                        </form>
                         </div>
                     </div>
                 </div>
                 </div>
             </main>
-        
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const familiaSelect = document.getElementById('familia-select');
+                    const categoryProductSelect = document.getElementById('category-product-select');
+                    const categoryProducts = @json($category_products);
+                
+                    function updateCategoryProducts(familiaId) {
+                        // Filtrar category_products basados en la familia seleccionada
+                        const filteredCategoryProducts = categoryProducts.filter(product => product.familia_id == familiaId);
+                
+                        // Limpiar el select de category_products
+                        categoryProductSelect.innerHTML = '';
+                
+                        // Agregar las opciones filtradas al select de category_products
+                        filteredCategoryProducts.forEach(product => {
+                            const option = document.createElement('option');
+                            option.value = product.id;
+                            option.text = product.name;
+                            categoryProductSelect.appendChild(option);
+                        });
+                
+                        // Seleccionar el valor de categoría actual si existe
+                        const selectedCategoryId = @json($producto->categoria_id ?? null);
+                        if (selectedCategoryId) {
+                            categoryProductSelect.value = selectedCategoryId;
+                        }
+                    }
+                
+                    // Inicializar el select de categorías basado en la familia actual
+                    updateCategoryProducts(familiaSelect.value);
+                
+                    familiaSelect.addEventListener('change', function () {
+                        updateCategoryProducts(this.value);
+                    });
+                });
+                </script>
+                
+
+            <script>
+                document.getElementById('deleteButton').addEventListener('click', function(event) {
+                    Swal.fire({
+                        title: '¿Estás seguro?',
+                        text: "¡No podrás revertir esto!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, eliminar',
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById('deleteForm').submit();
+                        }
+                    });
+                });
+            </script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
             <script>
             

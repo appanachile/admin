@@ -45,8 +45,12 @@
                                 <thead>
                                     <tr>
                                         <th
-                                        class="py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600">
+                                        class="py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600">
                                         Nombre
+                                        </th>
+                                        <th
+                                        class="py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600">
+                                        Categoria
                                         </th>
                                         <th
                                         class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -86,8 +90,8 @@
                                     @foreach ($productos as $producto)
                                         <tr>
                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <div class="flex items-center">
-                                                <div class="flex-shrink-0 w-10 h-10">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 w-10 h-10">
                                                     @if ($producto->image)
                                                         <img class="w-full h-full rounded-full"
                                                         src="{{Storage::url($producto->image)}}"
@@ -111,6 +115,13 @@
                                                         </a>
                                                     </div>
                                                 </div>
+                                            </td>
+                                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm whitespace-nowrap text-center">
+                                                @if ($producto->categoria)
+                                                    {{$producto->categoria->name}}
+                                                @else
+                                                    -
+                                                @endif
                                             </td>
                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 @php
